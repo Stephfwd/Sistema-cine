@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartelera - Sistema Cine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/shared.css?v=3">
+</head>
+
+<body>
+    <div class="bg-mesh">
+        <video autoplay muted loop class="bg-video">
+            <source
+                src="https://assets.mixkit.co/videos/preview/mixkit-cinematic-view-of-a-movie-theater-with-empty-seats-41122-large.mp4"
+                type="video/mp4">
+        </video>
+    </div>
+    <div class="dashboard-container">
+        <nav>
+            <button id="btn-inicio" class="menu-btn">Inicio</button>
+        </nav>
+        <h1>Cartelera de Películas</h1>
+
+        <div class="admin-panel">
+            <h2 class="section-title">Administrar Película</h2>
+
+            <section class="movie-form">
+                <div class="input-group">
+                    <label for="movie-title">Título de la Película</label>
+                    <input type="text" id="movie-title" placeholder="Ej: Avengers: Endgame">
+                </div>
+
+                <div class="input-group">
+                    <label for="movie-genre">Género</label>
+                    <select id="movie-genre">
+                        <option value="">Seleccionar Género</option>
+                        <option value="accion">Acción</option>
+                        <option value="comedia">Comedia</option>
+                        <option value="drama">Drama</option>
+                        <option value="terror">Terror</option>
+                        <option value="ciencia-ficcion">Ciencia Ficción</option>
+                    </select>
+                </div>
+
+                <div class="input-group full-width">
+                    <label for="movie-synopsis">Sinopsis</label>
+                    <textarea id="movie-synopsis" rows="4" placeholder="Breve descripción de la película..."></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="movie-duration">Duración (minutos)</label>
+                    <input type="number" id="movie-duration" placeholder="Ej: 150">
+                </div>
+
+                <div class="input-group">
+                    <label for="movie-class">Clasificación</label>
+                    <select id="movie-class">
+                        <option value="A">A (Todo público)</option>
+                        <option value="B">B (12+ años)</option>
+                        <option value="B15">B15 (15+ años)</option>
+                        <option value="C">C (Adultos)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="movie-start-date">Fecha Inicio Exhibición</label>
+                    <input type="date" id="movie-start-date">
+                </div>
+
+                <div class="input-group">
+                    <label for="movie-end-date">Fecha Fin Exhibición</label>
+                    <input type="date" id="movie-end-date">
+                </div>
+
+                <div class="input-group">
+                    <label for="movie-schedules">Horarios (separados por coma)</label>
+                    <input type="text" id="movie-schedules" placeholder="Ej: 14:00, 17:00, 20:00">
+                </div>
+
+                <div class="input-group">
+                    <label for="movie-status">Estado</label>
+                    <select id="movie-status">
+                        <option value="activa">Activa</option>
+                        <option value="inactiva">Inactiva</option>
+                    </select>
+                </div>
+
+                <div class="input-group full-width">
+                    <label for="movie-media">Material Multimedia (URL de Imagen/Trailer)</label>
+                    <input type="url" id="movie-media" placeholder="https://ejemplo.com/poster.jpg">
+                </div>
+
+                <button class="btn-save">Guardar Película</button>
+            </section>
+
+            <h2 class="section-title">Películas en Cartelera</h2>
+
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Género</th>
+                            <th>Duración</th>
+                            <th>Horarios</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-peliculas">
+                        <!-- Las películas se cargarán dinámicamente aquí -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script type="module" src="/js/protection.js"></script>
+        <script type="module" src="/js/cartelera.js?v=2"></script>
+</body>
+
+</html>

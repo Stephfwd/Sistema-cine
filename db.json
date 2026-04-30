@@ -1,0 +1,92 @@
+{
+  "Usuarios": [
+    {
+      "id": "1",
+      "nombre": "Administrador",
+      "apellido": "Sistema",
+      "email": "admin@cine.com",
+      "password": "admin",
+      "rol": "admin"
+    }
+  ],
+  "Peliculas": [
+    {
+      "id": "1",
+      "titulo": "",
+      "genero": "",
+      "duracion": "",
+      "clasificacion": "",
+      "precio": 0
+    },
+    {
+      "id": "b0a3"
+    }
+  ],
+  "Salas": [
+    {
+      "id": "1",
+      "nombre": "",
+      "capacidad": "",
+      "precio": 0
+    },
+    {
+      "id": "0819"
+    }
+  ],
+  "Boletos": [
+    {
+      "id": "1",
+      "pelicula": "",
+      "cine": "",
+      "sala": "",
+      "horario": "",
+      "precio": 0
+    },
+    {
+      "id": "2750"
+    },
+    {
+      "id": "9ea3"
+    },
+    {
+      "id": "0bbf"
+    },
+    {
+      "id": "f3cb"
+    },
+    {
+      "id": "f7c8"
+    },
+    {
+      "id": "ad22"
+    },
+    {
+      "id": "2ceb"
+    },
+    {
+      "id": "34eb"
+    },
+    {
+      "id": "739c"
+    },
+    {
+      "id": "914c"
+    }
+  ],
+  "Confiteria": [
+    {
+      "id": "1",
+      "nombre": "",
+      "precio": 0
+    },
+    {
+      "id": "b50a"
+    },
+    {
+      "id": "99f1"
+    },
+    {
+      "id": "0e6c"
+    }
+  ]
+}

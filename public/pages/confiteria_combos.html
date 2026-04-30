@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confitería y Combos - Sistema Cine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/shared.css?v=3">
+</head>
+
+<body>
+    <div class="bg-mesh">
+        <video autoplay muted loop class="bg-video">
+            <source
+                src="https://assets.mixkit.co/videos/preview/mixkit-cinematic-view-of-a-movie-theater-with-empty-seats-41122-large.mp4"
+                type="video/mp4">
+        </video>
+    </div>
+    <div class="dashboard-container">
+        <nav>
+            <button id="btn-inicio" class="menu-btn">Inicio</button>
+        </nav>
+        <h1>Gestión de Confitería</h1>
+        <div class="admin-panel">
+            <h2 class="section-title">Registrar Producto / Combo</h2>
+
+            <section class="movie-form">
+                <div class="input-group full-width">
+                    <label for="combo-name">Nombre del Producto o Combo</label>
+                    <input type="text" id="combo-name" placeholder="Ej: Combo Pareja Extra">
+                </div>
+
+                <div class="input-group full-width">
+                    <label for="combo-products">Productos Incluidos</label>
+                    <textarea id="combo-products" rows="2"
+                        placeholder="Ej: 2 Palomitas Grandes, 2 Refrescos Medianos, 1 Chocolate..."></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="combo-price">Precio ($)</label>
+                    <input type="number" id="combo-price" step="0.01" placeholder="0.00">
+                </div>
+
+                <div class="input-group">
+                    <label for="combo-size">Tamaño General</label>
+                    <select id="combo-size">
+                        <option value="pequeno">Pequeño</option>
+                        <option value="mediano">Mediano</option>
+                        <option value="grande">Grande</option>
+                        <option value="familiar">Familiar / Cubetazo</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="combo-stock">Disponibilidad (Stock)</label>
+                    <input type="number" id="combo-stock" placeholder="Ej: 50">
+                </div>
+
+                <div class="input-group">
+                    <label for="combo-status">Estado del Producto</label>
+                    <select id="combo-status">
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                    </select>
+                </div>
+
+                <button class="btn-save">Guardar Producto / Combo</button>
+            </section>
+
+            <h2 class="section-title">Inventario de Confitería</h2>
+
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Producto / Combo</th>
+                            <th>Tamaño</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-confiteria">
+                        <!-- Los productos se cargarán dinámicamente aquí -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="/js/protection.js"></script>
+    <script type="module" src="/js/confiteria.js?v=3"></script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de Boletos - Sistema Cine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/shared.css?v=3">
+</head>
+
+<body>
+    <div class="bg-mesh">
+        <video autoplay muted loop class="bg-video">
+            <source
+                src="https://assets.mixkit.co/videos/preview/mixkit-cinematic-view-of-a-movie-theater-with-empty-seats-41122-large.mp4"
+                type="video/mp4">
+        </video>
+    </div>
+    <div class="dashboard-container">
+        <nav>
+            <button id="btn-inicio" class="menu-btn">Inicio</button>
+        </nav>
+        <h1>Venta de Boletos</h1>
+        <div class="admin-panel">
+            <h2 class="section-title">Registrar Venta / Reserva</h2>
+
+            <section class="movie-form">
+                <div class="input-group">
+                    <label for="ticket-function">Función / Película</label>
+                    <select id="ticket-function">
+                        <option value="">Seleccionar Función</option>
+                        <option value="inception-1500">Inception - 15:00</option>
+                        <option value="avengers-1800">Avengers - 18:00</option>
+                        <option value="lionking-1200">The Lion King - 12:00</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="ticket-quantity">Cantidad de Boletos</label>
+                    <input type="number" id="ticket-quantity" min="0" max="99" value="1">
+                </div>
+
+                <div class="input-group">
+                    <label for="ticket-type">Tipo de Boleto</label>
+                    <select id="ticket-type">
+                        <option value="adulto">Adulto</option>
+                        <option value="nino">Niño / Adulto Mayor</option>
+                        <option value="vip">VIP</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="ticket-seat">Asiento(s)</label>
+                    <input type="text" id="ticket-seat" placeholder="Ej: H-12, H-13">
+                </div>
+
+                <div class="input-group">
+                    <label for="ticket-price">Precio Total ($)</label>
+                    <input type="number" id="ticket-price" step="0.01" placeholder="0.00">
+                </div>
+
+                <div class="input-group">
+                    <label for="ticket-status">Estado de la Compra</label>
+                    <select id="ticket-status">
+                        <option value="pagado">Pagado</option>
+                        <option value="reservado">Reservado</option>
+                        <option value="cancelado">Cancelado</option>
+                    </select>
+                </div>
+
+                <button class="btn-save">Registrar Operación</button>
+            </section>
+
+            <h2 class="section-title">Control de Ventas y Reservas</h2>
+
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID Transacción</th>
+                            <th>Función</th>
+                            <th>Cantidad</th>
+                            <th>Asiento</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-boletos">
+                        <!-- Los boletos se cargarán dinámicamente aquí -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="/js/protection.js"></script>
+    <script type="module" src="/js/boletos.js?v=3"></script>
+</body>
+
+</html>

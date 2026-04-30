@@ -1,0 +1,112 @@
+:root {
+    --bg-color: #000000;
+    --card-bg: #1a1a1a;
+    --primary-purple: #8a2be2;
+    --accent-purple: #9b4dff;
+    --text-white: #ffffff;
+    --text-dim: #b3b3b3;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-white);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+    background: #000;
+    background: linear-gradient(135deg, #000 0%, #0d0d0d 100%);
+}
+
+.bg-mesh {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(138, 43, 226, 0.4) 0%, transparent 40%),
+        radial-gradient(circle at 0% 100%, rgba(138, 43, 226, 0.3) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+        #000;
+    filter: blur(60px);
+    animation: background-animate 15s ease infinite alternate;
+}
+
+@keyframes background-animate {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+
+    50% {
+        transform: scale(1.1) translate(-2%, -2%);
+    }
+
+    100% {
+        transform: scale(1.2) translate(2%, 2%);
+    }
+}
+
+.dashboard-container {
+    width: 90%;
+    max-width: 1000px;
+    padding: 3rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    background: linear-gradient(to right, #fff, var(--accent-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+}
+
+.menu-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-white);
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-purple);
+    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+}
+
+.menu-btn:active {
+    transform: scale(0.95);
+}

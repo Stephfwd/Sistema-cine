@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/shared.css?v=3">
+</head>
+
+<body>
+    <div class="bg-mesh">
+        <video autoplay muted loop class="bg-video">
+            <source
+                src="https://assets.mixkit.co/videos/preview/mixkit-cinematic-view-of-a-movie-theater-with-empty-seats-41122-large.mp4"
+                type="video/mp4">
+        </video>
+    </div>
+    <div class="dashboard-container">
+        <nav>
+            <button id="btn-inicio" class="menu-btn">Inicio</button>
+        </nav>
+        <h1>Gestión de Salas</h1>
+
+        <div class="admin-panel">
+            <h2 class="section-title">Registrar Nueva Sala</h2>
+
+            <section class="movie-form">
+                <div class="input-group">
+                    <label for="room-name">Nombre o Número de Sala</label>
+                    <input type="text" id="room-name" placeholder="Ej: Sala 01">
+                </div>
+
+                <div class="input-group">
+                    <label for="room-capacity">Capacidad (Asientos)</label>
+                    <input type="number" id="room-capacity" placeholder="Ej: 120">
+                </div>
+
+                <div class="input-group">
+                    <label for="room-type">Tipo de Sala</label>
+                    <select id="room-type">
+                        <option value="2D">Regular 2D</option>
+                        <option value="3D">Digital 3D</option>
+                        <option value="IMAX">IMAX</option>
+                        <option value="VIP">VIP Premium</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="room-op-status">Estado Operativo</label>
+                    <select id="room-op-status">
+                        <option value="operativa">Operativa</option>
+                        <option value="mantenimiento">En Mantenimiento</option>
+                        <option value="fuera">Fuera de Servicio</option>
+                    </select>
+                </div>
+
+                <div class="input-group full-width">
+                    <label for="room-equipment">Equipamiento</label>
+                    <textarea id="room-equipment" rows="3"
+                        placeholder="Ej: Proyector 4K Laser, Sonido Dolby Atmos, Butacas Reclinables..."></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="room-availability">Disponibilidad para Programación</label>
+                    <select id="room-availability">
+                        <option value="disponible">Disponible</option>
+                        <option value="no-disponible">No Disponible</option>
+                    </select>
+                </div>
+
+                <button class="btn-save">Registrar Sala</button>
+            </section>
+
+            <h2 class="section-title">Salas Registradas</h2>
+
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Sala</th>
+                            <th>Tipo</th>
+                            <th>Capacidad</th>
+                            <th>Estado</th>
+                            <th>Disponibilidad</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-salas">
+                        <!-- Las salas se cargarán dinámicamente aquí -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="/js/protection.js"></script>
+    <script type="module" src="/js/salas.js?v=2"></script>
+</body>
+
+</html>

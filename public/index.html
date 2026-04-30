@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Premium - La mejor experiencia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/shared.css">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark: #0a0a0a;
+        }
+        body {
+            margin: 0;
+            background: var(--dark);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.4);
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--gold);
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        .cta-container {
+            display: flex;
+            gap: 20px;
+        }
+        .btn {
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        .btn-gold {
+            background: var(--gold);
+            color: black;
+        }
+        .btn-gold:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+        .btn-outline:hover {
+            background: white;
+            color: black;
+        }
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="logo">CINEMA PREMIUM</div>
+        <div class="nav-links">
+            <a href="/pages/login.html" style="color: white; text-decoration: none; font-weight: 600;">Iniciar Sesión</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <video autoplay muted loop>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-cinematic-view-of-a-movie-theater-with-empty-seats-41122-large.mp4" type="video/mp4">
+        </video>
+        <h1>VIVE EL CINE</h1>
+        <p>La mejor tecnología en imagen y sonido para los verdaderos amantes del séptimo arte.</p>
+        <div class="cta-container">
+            <a href="/pages/Cartelera.html" class="btn btn-gold">Ver Cartelera</a>
+            <a href="/pages/registro.html" class="btn btn-outline">Registrarse</a>
+        </div>
+    </div>
+
+    <script type="module" src="/js/protection.js"></script>
+</body>
+</html>
