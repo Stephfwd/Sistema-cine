@@ -10,11 +10,15 @@ app.get('/', (req, res) => {
   res.json({ message: "Bienvenido a la API del Sistema de Cine" });
 });
 
-// Example of how endpoints will look
-// app.get('/peliculas', async (req, res) => {
-//   const peliculas = await db.Pelicula.findAll();
-//   res.json(peliculas);
-// });
+// Routes
+app.use('/cines', require('./Routes/CineRoute'));
+app.use('/peliculas', require('./Routes/PeliculaRoute'));
+app.use('/salas', require('./Routes/SalaRoute'));
+app.use('/funciones', require('./Routes/FuncionRoute'));
+app.use('/entradas', require('./Routes/EntradaRoute'));
+app.use('/asientos', require('./Routes/AsientoRoute'));
+app.use('/carteleras', require('./Routes/CarteleraRoute'));
+app.use('/tiposalas', require('./Routes/TipoSalaRoute'));
 
 const PORT = process.env.PORT || 3000;
 
